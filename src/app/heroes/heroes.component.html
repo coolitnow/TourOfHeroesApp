@@ -1,5 +1,11 @@
 <h2>{{hero.name | uppercase}} Details</h2>
 <!-- pipes are used as operators. this calls the built in UppercasePipe operator
-    you can also build your own pipe operators -->
+    good way to format display data
+    you can also build your own pipes  -->
 <div><span>id: </span>{{hero.id}}</div>
 <div><span>name: </span>{{hero.name}}</div>
+
+<div>
+    <label for="name">Hero name: </label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div>
