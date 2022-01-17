@@ -10,6 +10,7 @@ import { Hero } from '../hero';
 })
 export class HeroDetailComponent implements OnInit {
 
+  //@Input() decorator makes a property available for binding by external components
   @Input() hero?: Hero;
   constructor() { }
 
