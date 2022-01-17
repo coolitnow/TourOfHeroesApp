@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
+import { Observable, of } from 'rxjs';
 
 //must register a provider before Angular can inject a service into a component
 //a provider can create or deliver a service. here it instantiates the HeroService class to proide the service
@@ -12,8 +13,9 @@ import { HEROES } from './mock-heroes';
 })
 export class HeroService {
 
-  getHeroes(): Hero[] {
-    return HEROES;
+  //observable is a key type of class in angular. can handle multiple values, asynchronous programming in JS, and event handling processes
+    const heroes = of(HEROES);
+    return heroes;
   }
   constructor() { }
 }

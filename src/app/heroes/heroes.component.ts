@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Hero} from '../hero';
-import{HEROES} from '../mock-heroes';
+import{HeroService} from '../hero.service';
 
 //parent of hero-detail component
 @Component({
@@ -10,17 +10,26 @@ import{HEROES} from '../mock-heroes';
 })
 export class HeroesComponent implements OnInit {
 
-  heroes = HEROES;
+  heroes: Hero[] = [];
   selectedHero?: Hero;
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
 
-  constructor() { }
+  //subscribe is an asynchronous way to wait for the observable to emit the array of heroes
+  getHeroes(): void {
+    this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes);
+  }
+
+  //constructors shouldn't do anything except minimal initialization
+  constructor(private heroService: HeroService) { }
+  
 
   //ngOnInit() is a lifecycle hook and is called shortly after creating a component 
   //good place to put initialization logic
   ngOnInit(): void {
+    this.getHeroes();
   }
 
 }
