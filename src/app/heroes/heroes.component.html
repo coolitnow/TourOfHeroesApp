@@ -1,5 +1,6 @@
 <h2>MY HEROES</h2>
 
+
 <ul class="heroes">
     <li *ngFor="let hero of heroes" 
         [class.selected]="hero === selectedHero"
@@ -7,4 +8,7 @@
         <span class="badge">{{hero.id}}</span> {{hero.name}}
     </li>
 </ul>
+
+<!-- hero is a property binding. one way data binding from the selectedHero property of HeroesComponent to the hero property if the HeroDetailComponent. When a user clicks on a hero in the list, the selectedHero changes. when the slectedHero changed, the property binding updates hero and the HeroDetailComponent displays the new hero -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 

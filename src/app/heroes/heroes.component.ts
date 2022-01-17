@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Hero} from '../hero';
 import{HEROES} from '../mock-heroes';
 
+//parent of hero-detail component
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
