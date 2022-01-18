@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../hero';
 
+
 //child component of HeroesComponent
 
 @Component({
