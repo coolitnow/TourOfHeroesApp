@@ -13,7 +13,8 @@ import { Observable, of } from 'rxjs';
 })
 export class HeroService {
 
-  //observable is a key type of class in angular. can handle multiple values, asynchronous programming in JS, and event handling processes
+  //observable is a key type of class in angular. can handle multiple values, asynchronous programming in JS, and event handling
+  getHeroes(): Observable<Hero[]> {
     const heroes = of(HEROES);
     return heroes;
   }
