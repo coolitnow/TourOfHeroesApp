@@ -12,12 +12,11 @@ import { MessageService } from '../message.service';
 export class HeroesComponent implements OnInit {
 
   heroes: Hero[] = [];
-  selectedHero?: Hero;
 
 
   //constructors shouldn't do anything except minimal initialization. 
   //inject services into component here
-  constructor(private heroService: HeroService, private messageService: MessageService) { }
+  constructor(private heroService: HeroService) { }
 
   //ngOnInit() is a lifecycle hook and is called shortly after creating a component 
   //good place to put initialization logic
@@ -25,10 +24,6 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
 
    //subscribe is an asynchronous way to wait for the observable to emit the array of heroes
    getHeroes(): void {
